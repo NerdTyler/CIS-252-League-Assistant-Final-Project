@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="demo_security.js"></script>
+</head>
+<body>
+
+<h1>Welcome to the League site</h1>
+<div id="button">
+<button onclick="ShowLogin();HideLogin();">Admin Sign-In</button>
+</div>
+<div id="AdminShow" style="display:none;">
+<form id="login">
+<strong>Administrator Login</strong>
+(Note: Password and Username are case sensitive)
+<br>
+Username: <br><input type="textbox" id="Username">
+<br>
+
+Password: <br><input type="textbox" id="Password">
+<br>
+
+</form>
+<button onclick="loginval();">Sign-In</button>
+</div>
+
+<h3>Stats</h3>
+
+<br><br><br>
+<button>Click here to print stats</button>
+</body>
+<script type="text/javascript" src="login.js"></script>
+</html>

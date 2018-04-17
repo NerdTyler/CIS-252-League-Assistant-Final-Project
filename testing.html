@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Index</title>
+<script>
+function ShowLogin (){
+	document.getElementById('AdminShow').style.display='block';}
+function HideLogin (){
+	document.getElementById('button').style.display='none';}
+
+function loginval() {
+var Username = document.getElementById("Username").value;
+var Password = document.getElementById("Password").value;
+var usernameval = Username.includes("@");
+var passwordcharcount = Password.length;
+var hasspace = Password.includes(" ");
+var howmanydigit = Password.replace(/\D/g, '').length
+var uppercasecheck = Password.length - Password.replace(/[A-Z]/g, '').length;
+var OK = /^([a-zA-Z0-9]+)$/;
+
+
+function passval(){
+	if (passwordcharcount>16 || passwordcharcount<8){
+		alert("The password must be between 8 and 16 characters.");
+	}
+	else{
+		if (hasspace==true){
+			alert("The password cannot contain a space.");
+		}
+		else{
+			if(howmanydigit>=1){
+				if (uppercasecheck>=1){
+					if(OK.test(Password)==false){
+						alert("Invalid character in password");
+					}
+					else{
+						alert("Success");
+						//PUT CODE HERE THAT CHECKS IF THE PASSWORD MATCHES THE ONES IN THE DATABASE
+						var current = Username+","+Password;
+						alert(current);
+					}
+				}
+				else{
+					alert("The password must contain at least 1 uppercase character.");
+				}
+			}
+			else{
+				alert("Password must contain at least 1 digit.");
+			}
+		}
+	}
+}
+
+
+switch (usernameval){
+	case true:
+	passval();
+	break;
+	
+	case false:
+	alert("The username cannot be left blank.");
+	break;
+}
+}
+</script>
+</head>
+<body>
+
+<h1>Welcome to the League site</h1>
+<div id="button">
+<button onclick="ShowLogin();HideLogin();">Admin Sign-In</button>
+</div>
+<div id="AdminShow" style="display:none;">
+<form id="login">
+<strong>Administrator Login</strong>
+<br>
+Username: <br><input type="textbox" id="Username">
+<br>
+
+Password: <br><input type="textbox" id="Password">
+<br>
+
+</form>
+<button onclick="loginval();">Sign-In</button>
+</div>
+
+<h3>Stats</h3>
+
+
+<br><br><br>
+<button>Click here to print stats</button>
+
+</body>
+</html>
