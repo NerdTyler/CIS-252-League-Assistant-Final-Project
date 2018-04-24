@@ -4,3 +4,6 @@ rawteamstats[1] = "Jets,2,4,1";
 rawteamstats[2] = "AppleDumplings,3,3,1";
 rawteamstats[3] = "MightyShrimp, 1, 5, 0";
 rawteamstats[4] = "Volcano, 2, 2, 2";
+rawteamstats[5] = "Aps,6,9,5";
+rawteamstats[6] = "Mrimp, 5, 5, 0";
+rawteamstats[7] = "Vono, 8, 2, 4";
