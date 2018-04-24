@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<script type="text/javascript" src="demo_stats.js"></script>
+<script type="text/javascript" src="Scores.js"></script>
 <head>
 <script>
 
@@ -7,14 +9,46 @@
 </script>
 
 </head>
-<body onload="load();">
+<body onload="load(); TableShow();">
 <div id="Adminhiddenpage" style="display:none;">
 <h1>Welcome to the League Admin Site</h1>
 <div id="button">
 <button onclick="SignOut();">Admin Sign-Out</button>
 </div>
+<br><br>
+<button onclick="AlphabetTeamList(); TableShow();">Alphabetize list</button>
+<br><br>
+<table border="1|1">
+<tr>
+  <td></td>
+  <td><b>Win</b></td>
+  <td><b>Loss</b></td>
+  <td><b>Tie</b></td>
+  <td><b>Score</b></td>
+</tr>
+<tr>
+  <td><b>High to Low</b></td>
+  <td><button onclick="WinHightoLow(); TableShow();">Rank</button></td>
+  <td><button onclick="LossHightoLow(); TableShow();">Rank</button></td>
+  <td><button onclick="TieHightoLow(); TableShow();">Rank</button></td>
+  <td><button onclick="ScoreHightoLow(); TableShow();">Rank</button></td>
+</tr>
+<tr>
+  <td><b>Low to High</b></td>
+  <td><button onclick="WinLowtoHigh(); TableShow();">Rank</button></td>
+  <td><button onclick="LossLowtoHigh(); TableShow();">Rank</button></td>
+  <td><button onclick="TieLowtoHigh(); TableShow();">Rank</button></td>
+  <td><button onclick="ScoreLowtoHigh(); TableShow();">Rank</button></td>
+</tr>
+</table>
+<br>
+<br>
+
+
+<div id= "box"></div>
 
 </div>
+
 </body>
 <script type="text/javascript" src="login.js"></script>
 <script type="text/javascript" src="demo_security.js"></script>

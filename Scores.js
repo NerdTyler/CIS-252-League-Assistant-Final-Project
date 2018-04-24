@@ -107,3 +107,29 @@ TeamInfo.sort(function(a, b){
 })
 console.log(TeamInfo);
 };
+
+
+
+function TableShow(){
+var html = "<table border='1|1'>";
+        html+="<tr>";
+        html+="<td><b>Team Name</b></td>";
+        html+="<td><b>Win</b></td>";
+        html+="<td><b>Loss</b></td>";
+        html+="<td><b>Tie</b></td>";
+        html+="<td><b>Score</b></td>";
+        html+="</tr>";
+    for (var i = 0; i < TeamInfo.length; i++) {
+        html+="<tr>";
+        html+="<td>"+TeamInfo[i].name+"</td>";
+        html+="<td>"+TeamInfo[i].win+"</td>";
+        html+="<td>"+TeamInfo[i].loss+"</td>";
+        html+="<td>"+TeamInfo[i].tie+"</td>";
+        html+="<td>"+TeamInfo[i].score+"</td>";
+        html+="</tr>";
+
+    }
+    html+="</table>";
+document.getElementById("box").innerHTML = html;
+}
+//above creates the table for the scores

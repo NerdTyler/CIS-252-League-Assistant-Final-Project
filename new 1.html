@@ -4,29 +4,43 @@
 <script type="text/javascript" src="Scores.js"></script>
 <head>
 </head>
-<body>
-<button onclick="AlphabetTeamList();">Alphabetize list</button>
+<body onload="TableShow();">
+
+<table border="1|1">
+<tr>
+  <td></td>
+  <td><b>Win</b></td>
+  <td><b>Loss</b></td>
+  <td><b>Tie</b></td>
+  <td><b>Score</b></td>
+</tr>
+<tr>
+  <td><b>High to Low</b></td>
+  <td><button onclick="WinHightoLow(); TableShow();">Rank</button></td>
+  <td><button onclick="LossHightoLow(); TableShow();">Rank</button></td>
+  <td><button onclick="TieHightoLow(); TableShow();">Rank</button></td>
+  <td><button onclick="ScoreHightoLow(); TableShow();">Rank</button></td>
+</tr>
+<tr>
+  <td><b>Low to High</b></td>
+  <td><button onclick="WinLowtoHigh(); TableShow();">Rank</button></td>
+  <td><button onclick="LossLowtoHigh(); TableShow();">Rank</button></td>
+  <td><button onclick="TieLowtoHigh(); TableShow();">Rank</button></td>
+  <td><button onclick="ScoreLowtoHigh(); TableShow();">Rank</button></td>
+</tr>
+</table>
+
+<button onclick="AlphabetTeamList(); TableShow();">Alphabetize list</button>
 <br><br>
-<p>Rank by Score</p>
-<button onclick="ScoreLowtoHigh();">Rank teams in order of score (Low to High)</button>
+
+
 <br>
-<button onclick="ScoreHightoLow();">Rank teams in order of score (High to Low)</button>
-<br><br>
-<p>Rank by Ties </p>
-<button onclick="TieHightoLow();">(High to Low)</button>
-<br>
-<button onclick="TieLowtoHigh();">(Low to High)</button>
-<br><br>
-<p>Rank by Wins</p>
-<button onclick="WinHightoLow();">(High to Low)</button>
-<br>
-<button onclick="WinLowtoHigh();">(Low to High)</button>
-<br><br>
-<p>Rank by Losses</p>
-<button onclick="LossLowtoHigh();">(Low to High)</button>
-<br>
-<button onclick="LossHightoLow();">(High to Low)</button>
-<br>
+
+<div id= "box"></div>
+
+
+
+
 </body>
 <script type="text/javascript" src="demo_stats.js"></script>
 </html>
