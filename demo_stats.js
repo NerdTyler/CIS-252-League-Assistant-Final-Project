@@ -7,3 +7,4 @@ rawteamstats[4] = "Volcano, 2, 2, 2";
 rawteamstats[5] = "Aps,6,9,5";
 rawteamstats[6] = "Mrimp, 5, 5, 0";
 rawteamstats[7] = "Vono, 8, 2, 4";
+rawteamstats[8] = "poop,4,3,2";

@@ -38,6 +38,20 @@ for (var p=0; p < amount; ++p){
 }
 console.log(TeamInfo);
 
+var Totalnumberofteams = TeamInfo.length;
+
+
+
+	if (Totalnumberofteams%2 == 0){
+		alert("EVEN");
+var EvenOrOdd = "Even";
+  }
+	else{
+var EvenOrOdd = "Odd";
+    }
+//checks if there is an odd or even number of teams
+
+
 
 //below came from http://www.javascriptkit.com/javatutors/arraysort2.shtml
 function AlphabetTeamList(){
