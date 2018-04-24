@@ -3,14 +3,12 @@
 <script type="text/javascript" src="demo_stats.js"></script>
 <script type="text/javascript" src="Scores.js"></script>
 <head>
-<script>
-
-
-</script>
-
 </head>
 <body onload="load(); TableShow();">
+
 <div id="Adminhiddenpage" style="display:none;">
+<div id="PrintArea1">
+
 <h1>Welcome to the League Admin Site</h1>
 <div id="button">
 <button onclick="SignOut();">Admin Sign-Out</button>
@@ -45,10 +43,19 @@
 <br>
 
 
+</div>
 <div id= "box"></div>
 
+
+<br><br><br>
+<div id="PrintArea2">
+<button onclick="HidePrintArea(); ShowPrintButton();">Click here to load print page</button>
+</div>
+<div id="PrintButton" style="display:none">
+<button onclick="FinalPrint();">Click here to print</button>
 </div>
 
+</div>
 </body>
 <script type="text/javascript" src="login.js"></script>
 <script type="text/javascript" src="demo_security.js"></script>

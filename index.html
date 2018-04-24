@@ -6,7 +6,7 @@
 <script type="text/javascript" src="Scores.js"></script>
 </head>
 <body onload="TableShow();">
-
+<div id="PrintArea1">
 <h1>Welcome to the League site</h1>
 <div id="button">
 <button onclick="ShowLogin();HideLogin();">Admin Sign-In</button>
@@ -27,9 +27,15 @@ Password: <br><input type="textbox" id="Password">
 </div>
 
 <h3>Stats</h3>
+</div>
 <div id= "box"></div>
 <br><br><br>
-<button>Click here to print stats</button>
+<div id="PrintArea2">
+<button onclick="HidePrintArea(); ShowPrintButton();">Click here to load print page</button>
+</div>
+<div id="PrintButton" style="display:none">
+<button onclick="FinalPrint();">Click here to print</button>
+</div>
 </body>
 <script type="text/javascript" src="login.js"></script>
 

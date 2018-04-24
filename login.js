@@ -33,16 +33,16 @@ function passval(){
 						var validate = passwdtable.includes(check);
 							if (validate==true){
 								alert("Success");
-								var cookie = "username=" + check + "; expires=" + expire;	
+								var cookie = "username=" + check + "; expires=" + expire;
 								document.cookie = cookie;
 								window.open("AdminSite.html");
 	//PUT CODE HERE THAT CHECKS IF THE PASSWORD MATCHES THE ONES IN THE DATABASE
 							}
 							else{
 								alert("Login failed, please try again.");
-								
+
 							}
-						
+
 					}
 				}
 				else{
@@ -61,7 +61,7 @@ switch (usernameval){
 	case true:
 	passval();
 	break;
-	
+
 	case false:
 	alert("The username cannot be left blank.");
 	break;
@@ -90,4 +90,19 @@ function SignOut(){
 	window.close();
 	window.open("index.html");
 	document.cookie = "username=" + Username + "; expires=Mon, 12 Apr 1999 12:00:00 UTC;";
+}
+function HidePrintArea(){
+document.getElementById('PrintArea1').style.display = "none";
+document.getElementById('PrintArea2').style.display = "none";
+}
+
+function ShowPrintButton(){
+document.getElementById('PrintButton').style.display = "block";
+}
+
+function FinalPrint (){
+document.getElementById('PrintButton').style.display = "none";
+window.print();
+alert("The page will now refresh.");
+window.location.reload(true);
 }
