@@ -6,7 +6,7 @@ for (i = 0; i < rawteamstats.length; i++) {
 }
 var amount = rawteamstats.length;
 var TextNoSpace = text.replace(/\s/g, '');
-//alert(TextNoSpace);
+
 
 var NewStats = TextNoSpace.split(";");
 var TeamNamesTextOnly = TextNoSpace.replace(/[0-9-,]/g, '');
@@ -35,7 +35,6 @@ var Totalnumberofteams = TeamInfo.length;
 
 
 	if (Totalnumberofteams%2 == 0){
-		alert("EVEN");
 var EvenOrOdd = "Even";
   }
 	else{
@@ -133,9 +132,50 @@ var html = "<table border='1|1'>";
         html+="<td>"+TeamInfo[i].tie+"</td>";
         html+="<td>"+TeamInfo[i].score+"</td>";
         html+="</tr>";
-
     }
     html+="</table>";
+//if things dont work, delete between here and to resumes
+
+
+    html+="<br><br>";
+    html+="<h3>Matchups</h3>";
+
+//    html+="<table border='1|1'>";
+
+if (EvenOrOdd=="Even"){
+    for (var i = 0, d=1; i < Totalnumberofteams; i++, d++) {
+        html+="<p><b>Matchup "+[d]+"</b></p>";
+        html+="<table>";
+        html+="<tr>";
+        html+="<td>"+TeamInfo[i].name+"</td>";
+        html+="<td>----VS----</td>";
+        html+="<td>"+TeamInfo[i+1].name+"</td>";
+        html+="</tr>";
+        html+="</table>";
+        html+="<br>";
+      i+=1
+    }}
+if (EvenOrOdd=="Odd"){
+    html+="<p><b>Bye Week</b></p>";
+    html+="<p>"+TeamInfo[0].name+"</p><br>";
+  for (var i = 1, d=0; i < Totalnumberofteams; i++, d++) {
+      html+="<p><b>Matchup "+[d+1]+"</b></p>";
+      html+="<table>";
+      html+="<tr>";
+      html+="<td>"+TeamInfo[i].name+"</td>";
+      html+="<td>----VS----</td>";
+      html+="<td>"+TeamInfo[i+1].name+"</td>";
+      html+="</tr>";
+      html+="</table>";
+      html+="<br>";
+    i+=1
+  }
+
+}
+
+
+
+//code resumes here
 document.getElementById("box").innerHTML = html;
 }
 //above creates the table for the scores
