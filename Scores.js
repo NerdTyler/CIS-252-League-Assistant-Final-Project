@@ -1,63 +1,59 @@
-
-
 var text = "";
+
 for (i = 0; i < rawteamstats.length; i++) {
-    text += rawteamstats[i] + ";";
+  text += rawteamstats[i] + ";";
 }
+
 var amount = rawteamstats.length;
 var TextNoSpace = text.replace(/\s/g, '');
-
-
 var NewStats = TextNoSpace.split(";");
 var TeamNamesTextOnly = TextNoSpace.replace(/[0-9-,]/g, '');
 var NewTeamNames = TeamNamesTextOnly.split(";");
-
 var NewStatsFin = NewStats.splice(-1,1);
+
 for (var w = 0; w < amount; ++w) {
-    this["marker"+w] = NewStats[w];
+  this["marker"+w] = NewStats[w];
 }
-
-
-
 
 var scoresstuff = "";
+
 for (i = 0; i < rawteamstats.length; i++) {
-    scoresstuff += rawteamstats[i] + ";";
+  scoresstuff += rawteamstats[i] + ";";
 }
+
 var scoresnospace = scoresstuff.replace(/\s/g, '');
 var scoresnoletters = scoresnospace.replace(/[a-z-A-Z]/g, '');
 var Scoresonly = scoresnoletters.split(";");
 var NewscoresFin = Scoresonly.splice(-1,1);
+
 for (var w = 0; w < amount; ++w) {
-    this["marker"+w] = Scoresonly[w];
+  this["marker"+w] = Scoresonly[w];
 }
-
-
 
 var TeamInfo = ["TeamInfo"];
+
 for (var p=0; p < amount; ++p){
     TeamInfo[p] = {
-        name: NewTeamNames[p],
-        win: parseInt(NewStats[p].substr(NewStats[p].indexOf(",")+1,"2").replace(/,/g, '')),
-        loss: parseInt(Scoresonly[p].substr(Scoresonly[p].indexOf(",")+3,"2").replace(/,/g, '')),
-		tie: parseInt((Scoresonly[p].substr(Scoresonly[p].indexOf(",")+5,"3").replace(/,/g, ''))),
-        score: ((NewStats[p].substr(NewStats[p].indexOf(",")+1,"2").replace(/,/g, ''))*2)+((Scoresonly[p].substr(Scoresonly[p].indexOf(",")+5,"3").replace(/,/g, ''))*1),
+      name: NewTeamNames[p],
+      win: parseInt(NewStats[p].substr(NewStats[p].indexOf(",")+1,"2").replace(/,/g, '')),
+      loss: parseInt(Scoresonly[p].substr(Scoresonly[p].indexOf(",")+3,"2").replace(/,/g, '')),
+      tie: parseInt((Scoresonly[p].substr(Scoresonly[p].indexOf(",")+5,"3").replace(/,/g, ''))),
+      score: ((NewStats[p].substr(NewStats[p].indexOf(",")+1,"2").replace(/,/g, ''))*2)+((Scoresonly[p].substr(Scoresonly[p].indexOf(",")+5,"3").replace(/,/g, ''))*1),
     };
 }
+
 console.log(TeamInfo);
 
 var Totalnumberofteams = TeamInfo.length;
 
-
-
 	if (Totalnumberofteams%2 == 0){
-var EvenOrOdd = "Even";
+    var EvenOrOdd = "Even";
   }
+
 	else{
-var EvenOrOdd = "Odd";
+    var EvenOrOdd = "Odd";
     }
 //checks if there is an odd or even number of teams
-
 
 
 //below came from http://www.javascriptkit.com/javatutors/arraysort2.shtml
@@ -149,14 +145,10 @@ var html = "<table border='1|1'>";
         html+="<td>"+TeamInfo[i].score+"</td>";
         html+="</tr>";
     }
+
     html+="</table>";
-//if things dont work, delete between here and to resumes
-
-
     html+="<br><br>";
     html+="<h3>Matchups</h3>";
-
-//    html+="<table border='1|1'>";
 
 if (EvenOrOdd=="Even"){
     for (var i = 0, d=1; i < Totalnumberofteams; i++, d++) {
@@ -189,9 +181,6 @@ if (EvenOrOdd=="Odd"){
 
 }
 
-
-
-//code resumes here
 document.getElementById("box").innerHTML = html;
 }
 //above creates the table for the scores

@@ -4,15 +4,14 @@ function HideLogin (){
 	document.getElementById('button').style.display='none';}
 
 function loginval() {
-var Username = document.getElementById("Username").value;
-var Password = document.getElementById("Password").value;
-var usernameval = Username.includes("@");
-var passwordcharcount = Password.length;
-var hasspace = Password.includes(" ");
-var howmanydigit = Password.replace(/\D/g, '').length
-var uppercasecheck = Password.length - Password.replace(/[A-Z]/g, '').length;
-var OK = /^([a-zA-Z0-9]+)$/;
-
+	var Username = document.getElementById("Username").value;
+	var Password = document.getElementById("Password").value;
+	var usernameval = Username.includes("@");
+	var passwordcharcount = Password.length;
+	var hasspace = Password.includes(" ");
+	var howmanydigit = Password.replace(/\D/g, '').length
+	var uppercasecheck = Password.length - Password.replace(/[A-Z]/g, '').length;
+	var OK = /^([a-zA-Z0-9]+)$/;
 
 function passval(){
 	if (passwordcharcount>16 || passwordcharcount<8){
@@ -74,17 +73,17 @@ Date.prototype.addHours= function(h){
 var expire = new Date().addHours(1);
 
 function load (){
-var cookieinformation = document.cookie;
-var revalidatecookie = cookieinformation.substr(9);
-var validate = passwdtable.includes(revalidatecookie);
-if (validate==true){
-alert("Success");
-document.getElementById('Adminhiddenpage').style.display='block';
-}
-else{alert("Sorry, but you do not have permission to view this site.");
-window.open("index.html");
-	window.close("AdminSite.html");}
-}
+	var cookieinformation = document.cookie;
+	var revalidatecookie = cookieinformation.substr(9);
+	var validate = passwdtable.includes(revalidatecookie);
+		if (validate==true){
+			alert("Success");
+			document.getElementById('Adminhiddenpage').style.display='block';
+		}
+		else{alert("Sorry, but you do not have permission to view this site.");
+			window.open("index.html");
+			window.close("AdminSite.html");}
+		}
 
 function SignOut(){
 	window.close();
@@ -92,17 +91,17 @@ function SignOut(){
 	document.cookie = "username=" + Username + "; expires=Mon, 12 Apr 1999 12:00:00 UTC;";
 }
 function HidePrintArea(){
-document.getElementById('PrintArea1').style.display = "none";
-document.getElementById('PrintArea2').style.display = "none";
+	document.getElementById('PrintArea1').style.display = "none";
+	document.getElementById('PrintArea2').style.display = "none";
 }
 
 function ShowPrintButton(){
-document.getElementById('PrintButton').style.display = "block";
+	document.getElementById('PrintButton').style.display = "block";
 }
 
 function FinalPrint (){
-document.getElementById('PrintButton').style.display = "none";
-window.print();
-alert("The page will now refresh.");
-window.location.reload(true);
+	document.getElementById('PrintButton').style.display = "none";
+	window.print();
+	alert("The page will now refresh.");
+	window.location.reload(true);
 }
