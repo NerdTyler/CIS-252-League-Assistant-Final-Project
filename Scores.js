@@ -18,14 +18,30 @@ for (var w = 0; w < amount; ++w) {
 }
 
 
+
+
+var scoresstuff = "";
+for (i = 0; i < rawteamstats.length; i++) {
+    scoresstuff += rawteamstats[i] + ";";
+}
+var scoresnospace = scoresstuff.replace(/\s/g, '');
+var scoresnoletters = scoresnospace.replace(/[a-z-A-Z]/g, '');
+var Scoresonly = scoresnoletters.split(";");
+var NewscoresFin = Scoresonly.splice(-1,1);
+for (var w = 0; w < amount; ++w) {
+    this["marker"+w] = Scoresonly[w];
+}
+
+
+
 var TeamInfo = ["TeamInfo"];
 for (var p=0; p < amount; ++p){
     TeamInfo[p] = {
         name: NewTeamNames[p],
-        win: parseInt((NewStats[p].charAt(NewStats[p].length-5))),
-        loss: parseInt((NewStats[p].charAt(NewStats[p].length-3))),
-		tie: parseInt((NewStats[p].charAt(NewStats[p].length-1))),
-		score: parseInt(((NewStats[p].charAt(NewStats[p].length-5))*2)+((NewStats[p].charAt(NewStats[p].length-1))*1)),
+        win: parseInt(NewStats[p].substr(NewStats[p].indexOf(",")+1,"2").replace(/,/g, '')),
+        loss: parseInt(Scoresonly[p].substr(Scoresonly[p].indexOf(",")+3,"2").replace(/,/g, '')),
+		tie: parseInt((Scoresonly[p].substr(Scoresonly[p].indexOf(",")+5,"3").replace(/,/g, ''))),
+        score: ((NewStats[p].substr(NewStats[p].indexOf(",")+1,"2").replace(/,/g, ''))*2)+((Scoresonly[p].substr(Scoresonly[p].indexOf(",")+5,"3").replace(/,/g, ''))*1),
     };
 }
 console.log(TeamInfo);
