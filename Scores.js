@@ -17,15 +17,7 @@ for (var w = 0; w < amount; ++w) {
     this["marker"+w] = NewStats[w];
 }
 
-//var Sorted1 = marker0;
 
-//need to put in way to sort the scores
-
-
-//for (var p=0; p < amount; ++p){
-  //var Loss = NewStats[p].charAt(NewStats[p].length-1);
-//alert(NewStats[p]);
-//}
 var TeamInfo = ["TeamInfo"];
 for (var p=0; p < amount; ++p){
     TeamInfo[p] = {
