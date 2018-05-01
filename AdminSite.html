@@ -6,7 +6,7 @@
   <title>League Ranking Site - ADMIN</title>
 </head>
 <body onload="load(); ScoreHightoLow(); TableShow();">
-
+<!--Loads the javascript to create the table for the scores, sorts them and then shows them-->
   <div id="Adminhiddenpage" style="display:none;">
     <div id="PrintArea1">
       <h1>Welcome to the League Admin Site</h1>
@@ -23,6 +23,7 @@
             <td><b>Loss</b></td>
             <td><b>Tie</b></td>
             <td><b>Score</b></td>
+    <!-- creating the tables for rank buttons-->
           </tr>
           <tr>
             <td><b>High to Low</b></td>
@@ -47,6 +48,7 @@
       <br><br><br>
       <div id="PrintArea2">
         <button onclick="HidePrintArea(); ShowPrintButton();">Click here to load print page</button>
+        <!--buttons-->
       </div>
       <div id="PrintButton" style="display:none">
         <button onclick="FinalPrint();">Click here to print</button>
