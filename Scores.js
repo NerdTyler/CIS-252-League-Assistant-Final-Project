@@ -3,35 +3,43 @@ var text = "";
 for (i = 0; i < rawteamstats.length; i++) {
   text += rawteamstats[i] + ";";
 }
-
+//creates string split by ;
 var amount = rawteamstats.length;
+//figures out the amount of teams there are
 var TextNoSpace = text.replace(/\s/g, '');
+//removes spaces from the string of teams
 var NewStats = TextNoSpace.split(";");
+//splits the teams based on ;
 var TeamNamesTextOnly = TextNoSpace.replace(/[0-9-,]/g, '');
+//replaces any numbers and spaces
 var NewTeamNames = TeamNamesTextOnly.split(";");
+//creates names list which is split by ;
 var NewStatsFin = NewStats.splice(-1,1);
-
+//removes last array item as it is blank
 for (var w = 0; w < amount; ++w) {
   this["marker"+w] = NewStats[w];
 }
-
+//creates an array for the team stats
 var scoresstuff = "";
 
 for (i = 0; i < rawteamstats.length; i++) {
   scoresstuff += rawteamstats[i] + ";";
 }
-
+//gets stats without any team names but keeps the order
 var scoresnospace = scoresstuff.replace(/\s/g, '');
+//removes any spaces from the scores
 var scoresnoletters = scoresnospace.replace(/[a-z-A-Z]/g, '');
+//removes any letters from the scores
 var Scoresonly = scoresnoletters.split(";");
+//splits the scores based on ;
 var NewscoresFin = Scoresonly.splice(-1,1);
-
+//removes las tarray item as it is blank
 for (var w = 0; w < amount; ++w) {
   this["marker"+w] = Scoresonly[w];
 }
-
+//creates an array for the team stats
 var TeamInfo = ["TeamInfo"];
-
+//creates the advanced array for each object
 for (var p=0; p < amount; ++p){
     TeamInfo[p] = {
       name: NewTeamNames[p],
@@ -68,7 +76,7 @@ TeamInfo.sort(function(a, b){
 })
 console.log(TeamInfo);
 };
-
+//below are the sorting button code
 function ScoreLowtoHigh(){
 TeamInfo.sort(function(a, b){
     return a.score-b.score
@@ -126,7 +134,7 @@ console.log(TeamInfo);
 };
 
 
-
+//below code creates the tables that hold the stats
 function TableShow(){
 var html = "<table border='1|1'>";
         html+="<tr>";
@@ -163,6 +171,7 @@ if (EvenOrOdd=="Even"){
         html+="<br>";
       i+=1
     }}
+    //below makes makes the matchup based on even or odd amount of teams
 if (EvenOrOdd=="Odd"){
     html+="<p><b>Bye Week</b></p>";
     html+="<p>"+TeamInfo[0].name+"</p><br>";
